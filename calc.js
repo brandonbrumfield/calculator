@@ -4,6 +4,8 @@ let z = "";
 let op = 0;
 let display_var = "";
 let current_var = "x" 
+let display_sim = true;
+let equals = false;
 
 // Applies given operation (op) to x and y then stores in z. 
 function operate(op, X, Y) { 
@@ -23,6 +25,10 @@ function operate(op, X, Y) {
             break;
 
     }
+
+    console.log(x)
+    console.log(y)
+    console.log(z)
 
     let rounded_string = z.toFixed(7);
     z = parseFloat(rounded_string)
@@ -82,6 +88,7 @@ const display = document.querySelector("#display")
 display.textContent = "0";
 
 zero.addEventListener("click", () => {
+    if (equals == true) {display_var = ""; equals = false;}
     display_var += "0";
     display.textContent = display_var;
 
@@ -89,61 +96,76 @@ zero.addEventListener("click", () => {
 })
 
 one.addEventListener("click", () => {
+    if (equals == true) {display_var = ""; equals = false;}
     display_var += "1";
     display.textContent = display_var;
 })
 
 two.addEventListener("click", () => {
-    
+    if (equals == true) {display_var = ""; equals = false;}
     display_var += "2";
     display.textContent = display_var;
 
 })
 
 three.addEventListener("click", () => {
+    if (equals == true) {display_var = ""; equals = false;}
     display_var += "3";
     display.textContent = display_var;
 })
 
 four.addEventListener("click", () => {
+    if (equals == true) {display_var = ""; equals = false;}
     display_var += "4";
     display.textContent = display_var;
 })
 
 five.addEventListener("click", () => {
+    if (equals == true) {display_var = ""; equals = false;}
     display_var += "5";
     display.textContent = display_var;
 })
 
 six.addEventListener("click", () => {
+    if (equals == true) {display_var = ""; equals = false;}
     display_var += "6";
     display.textContent = display_var;
 })
 
 seven.addEventListener("click", () => {
+    if (equals == true) {display_var = ""; equals = false;}
     display_var += "7";
     display.textContent = display_var;
 })
 
 eight.addEventListener("click", () => {
+    if (equals == true) {display_var = ""; equals = false;}
     display_var += "8";
     display.textContent = display_var;
 })
 
 nine.addEventListener("click", () => {
+    if (equals == true) {display_var = ""; equals = false;}
     display_var += "9";
     display.textContent = display_var;
 })
 
 add_btn.addEventListener("click", () => {
+    
     op = "add";
     display.textContent = "+";
     x = display_var;
     display_var = "";
 
+
+
+    
+    
+
 })
 
 equals_btn.addEventListener("click", () => {
+    equals = true;
     y = display_var;
     operate(op,parseFloat(x),parseFloat(y))
 
@@ -185,5 +207,6 @@ clear_btn.addEventListener("click", () => {
     current_var = "x";
     display_var = "";
     display.textContent = "0";
+    time_for_y = false;
 })
 
